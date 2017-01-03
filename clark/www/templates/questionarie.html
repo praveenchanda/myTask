@@ -1,0 +1,48 @@
+<ion-view view-title="QUESTIONARIES" style="background: black;">
+  <ion-content style<div style="width=initial-width;height:auto;line-height:2em;overflow:auto;padding:5px;background: silver;"></div>>
+   <h1 class="red" required>CUSTOMER SATISFACTION SURVEY</h1><br>
+	<div class="myqs" id="q1">
+	<h2 class="green">1.please feel free to ask any of two questions about comany<br><br>
+	<input type="text" name="myname" id="myname" style="border:1px solid #000;color:white;width: 400px; border-radius: 10px; background: maroon;" />
+		<input type="button" value="next" ng-click="q1btn()" />
+	</div>
+	<div class="myqs1" id="q2" style="display:none">
+	What is your next question?<br>
+	<input type="text" age="myage" id="myage" style="border:1px solid #000; border-radius: 10px; background: #73AD21;" />
+		<input type="button" value="next" ng-click="q2btn()" />
+	</div>
+	<div class="myqs2" id="q3" style="display:none">
+	Your first question is: {{name}}.<br>
+	Your second question is: {{age}}
+	</div><br>
+	<div class="secqs">
+	<h2 class="green"> 2.How likely are you purchase any of our products</h2><br>
+<form name="myForm">
+  <label>
+    <input type="radio" ng-model="color.name" value="Extremlly">
+	Extremlly
+  </label>
+  <label><br>
+    <input type="radio" ng-model="color.name" value="verylikely">
+   verylikely
+  </label>
+  <label><br>
+    <input type="radio" ng-model="color.name" value="not so likely">
+    not so likely
+  </label><br>
+  <tt><h2>your answer = {{color.name | json}}</tt>
+ </form>
+</div>
+<h2 class="green">3. *please give me overall feedback</h2>
+  <form class="thirdqs"  name="form">
+    <label for="required"> required: </label>
+    <input type="checkbox" ng-model="required" id="required" />
+    <br>
+    <label for="input">This input must be filled if `required` is true: </label>
+    <input type="text" ng-model="model" id="input" name="input" style="border:1px solid #000"; ng-required="required" /><br>
+    
+ <h3>   required error set? = <code>{{form.input.$error.required}}</code><br>
+    your responce = <code>{{model}}</code><h3>
+	<button class="button button-full button-assertive" ng-click="result()">SUBMIT</button>
+  </ion-content>
+</ion-view>
